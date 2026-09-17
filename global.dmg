@@ -4,6 +4,31 @@ module.exports = {
 module.exports = {
   docs: [
     {
+import SwiftUI
+
+struct ContentView: View {
+    @State private var message = "V0"
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text(message)
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding()
+
+            Button(action: {
+                message = "DONE!"
+            }) {
+                Text("OPEN")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+        }
+    }
+}
       type: 'category',
       label: 'global.dmg',
       items: [
