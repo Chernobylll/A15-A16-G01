@@ -29,6 +29,29 @@ struct ContentView: View {
         }
     }
 }
+import SwiftUI
+
+struct Item: Identifiable {
+    let id = UUID()
+    let name: String
+}
+
+struct ItemListView: View {
+    let items = [
+        Item(name: "V1"),
+        Item(name: "اV2"),
+        Item(name: "اV3")
+    ]
+
+    var body: some View {
+        NavigationView {
+            List(items) { item in
+                Text(item.name)
+            }
+            .navigationTitle("itms")
+        }
+    }
+}
       type: 'category',
       label: 'global.dmg',
       items: [
